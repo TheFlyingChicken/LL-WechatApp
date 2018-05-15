@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/category/category",
+    "pages/car/car",
+    "pages/index/index",
+    "pages/addCgi/addCgi"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "胖胖大魔王",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "podition": "bottom",
+    "color": "#878787",
+    "selectedColor": "#4db30f",
+    "list": [
+      {
+        "pagePath": "pages/category/category",
+        "text": "首页",
+        "iconPath": "res/images/icons/category.png",
+        "selectedIconPath": "res/images/icons/category-selected.png"
+      },
+      {
+        "pagePath": "pages/car/car",
+        "text": "购物车",
+        "iconPath": "res/images/icons/car.png",
+        "selectedIconPath": "res/images/icons/car-selected.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我",
+        "iconPath": "res/images/icons/user.png",
+        "selectedIconPath": "res/images/icons/user-selected.png"
+      }
+    ]
+  }
+}
