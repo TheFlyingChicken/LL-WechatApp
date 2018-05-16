@@ -26,6 +26,7 @@ var config = {
         // 获取所有Category
         categoryUrl: `${host}/weapp/category/categories`,
         brandUrl: `${host}/weapp/category/brands`,
+        lastedBrandUrl: `${host}/weapp/category/lastedBrands`,
         testUrl: `${host}/weapp/category/test`,
     }
 };

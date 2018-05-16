@@ -11,20 +11,21 @@ Page({
    */
   data: {
     categories: category.list(),
+    brands: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    this.getLastedBrands()
   },
 
   /**
@@ -69,11 +70,18 @@ Page({
   
   },
 
-  showLoading: function () {
-    wx.showLoading({
-      title: '',
-      icon: 'loading'
+  getLastedBrands: function() {
+    var self = this
+    wx.request({
+      url: config.service.lastedBrandUrl,
+      success: function(res){
+        self.setData({
+          brands: res.data.data
+        })
+      },
+      fail: function(e){
+        console.error(e)
+      }
     })
-  }
-
+  },
 })

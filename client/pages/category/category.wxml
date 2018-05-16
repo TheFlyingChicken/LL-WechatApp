@@ -13,21 +13,16 @@
           </block>
         </view> 
         <view class='lightLine'></view>
-
-
+        <!--最近上新  -->
         <text class='nav_title'>最近刚上新</text>
-        <view class="page-row" style="justify-content:center">
-                <image style="width:240rpx;height:292rpx;" src="../../res/images/category-icon/perfume.png" mode="aspectFill"/>
-                <image style="width:240rpx;height:292rpx;" src="../../res/images/category-icon/perfume.png" mode="aspectFill"/>
-                <image style="width:240rpx;height:292rpx;" src="../../res/images/category-icon/perfume.png" mode="aspectFill"/>
-        </view>
-        <view class="page-row" style="justify-content:center">
-                <image style="width:360rpx;height:202rpx;" src="../../res/images/category-icon/perfume.png" mode="aspectFill"/>
-                <image style="width:360rpx;height:202rpx;" src="../../res/images/category-icon/perfume.png" mode="aspectFill"/>
-        </view>
-        <view class="page-row" style="justify-content:center">
-                <image style="width:360rpx;height:202rpx;" src="../../res/images/category-icon/perfume.png" mode="aspectFill"/>
-                <image style="width:360rpx;height:202rpx;" src="../../res/images/category-icon/perfume.png" mode="aspectFill"/>
+        <view class="brand">
+          <block wx:for="{{brands}}" wx:key="id">
+            <view class="brand-item"> 
+              <image style="width:200rpx;height:240rpx;"  
+              src="../../res/images/category-icon/perfume.png" mode="aspectFill"></image>
+              <text>{{item.name}}</text>
+            </view>
+          </block>
         </view>
 
     </scroll-view>
