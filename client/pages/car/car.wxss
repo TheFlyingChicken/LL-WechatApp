@@ -1,1 +1,183 @@
 /* pages/car/car.wxss */
+.container{
+    justify-content:initial;
+}
+
+.car-body{
+    width: 100%;
+    background-color: #fff;
+    padding-bottom: 100rpx;
+}
+.good-card{
+    width: 100%;
+    overflow: hidden;
+}
+.good-card-body{
+    display: flex;
+    justify-content:space-between;
+    padding-left: 30rpx;
+    width: 870rpx;
+    box-sizing: border-box;
+    transition: margin-left 0.2s ease-in-out;
+    background: url(https://cdn.it120.cc/images/weappshop/gou.png) no-repeat 30rpx center;
+    background-size: 40rpx auto; 
+}
+.good-card-body .active{
+    background: url(https://cdn.it120.cc/images/weappshop/gou-red.png) no-repeat 30rpx center;
+    background-size: 40rpx auto; 
+}
+.good-card-info{
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content:space-between;
+    padding: 30rpx 0 30rpx 70rpx; 
+    width: 720rpx;
+    box-sizing: border-box;
+}
+.good-card-info .img-box{
+    width: 160rpx;
+    height:160rpx;
+    overflow: hidden;
+    margin-right: 20rpx;
+}
+
+.good-card-info .img-box .img{
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.good-card-info .text-box{
+    width: 440rpx;
+    position: relative;
+}
+.good-card-info .text-box .good-title{
+    font-size: 28rpx;
+    color:#000;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 10rpx 20rpx 5rpx 0;
+}
+.good-card-info .text-box .good-label{
+    font-size: 26rpx;
+    color:#999;
+    height: 38rpx;
+    line-height: 38rpx;
+    margin: 8rpx 0 25rpx 0;
+}
+.good-card-info .text-box .good-price{
+    font-size: 26rpx;
+    color:#e64340;
+}
+.good-card-info .text-box .buy-num{
+    width: 164rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    position: absolute;
+    right: 30rpx;
+    bottom: 0;
+    display: flex;
+    /*justify-content: space-between;*/
+    font-size: 24rpx;
+    text-align: center
+}
+.good-card-info .text-box .buy-num .minus-btn{
+    width: 48rpx;
+    height: 100%;
+    border-left: 1rpx solid #ccc;
+    border-bottom: 1rpx solid #ccc;
+    border-top: 1rpx solid #ccc;
+    border-bottom-left-radius: 6rpx;
+    border-top-left-radius: 6rpx;
+}
+.good-card-info .text-box .buy-num .minus-btn.disabled{
+    background-color: #f5f5f9;
+    border-left: 1rpx solid #eee;
+    border-bottom: 1rpx solid #eee;
+    border-top: 1rpx solid #eee;
+    color: #ccc;
+}
+.good-card-info .text-box .buy-num .add-btn{
+    width: 48rpx;
+    height: 100%;
+    border-right: 1rpx solid #ccc;
+    border-bottom: 1rpx solid #ccc;
+    border-top: 1rpx solid #ccc;
+    border-bottom-right-radius: 6rpx;
+    border-top-right-radius: 6rpx;
+}
+.good-card-info .text-box .buy-num .add-btn.disabled{
+    background-color: #f5f5f9;
+    border-right: 1rpx solid #eee;
+    border-bottom: 1rpx solid #eee;
+    border-top: 1rpx solid #eee;
+    color: #ccc;
+}
+.good-card-info .text-box .buy-num input{
+    width: 68rpx;
+    height: 48rpx;
+    min-height: 48rpx;
+    text-align: center;
+    font-size: 24rpx;
+    border: 1rpx solid #ccc;
+}
+
+.good-card-infogood-card-info .img-box .img{
+    width: 160rpx;
+    height:160rpx;
+}
+
+.good-conts .delete-btn{
+    width: 120rpx;
+    line-height: 220rpx;
+    text-align: center;
+    background:#e64340;
+    font-size: 24rpx;
+    color: #fff;
+}
+.calculate-box{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-bottom:1px solid #eee; 
+    border-top:1px solid #eee; 
+    background-color: #fff;
+}
+.calculate-box .to-pay-btn{
+    width:240rpx;
+    text-align: center;
+    line-height: 100rpx;
+    background-color: #e64340;
+    font-size:32rpx;
+    color:#ffffff;
+}
+.calculate-box .to-pay-btn.no-select{
+    background-color: #ccc;
+}
+
+.calculate-box  .left-price{
+    display: flex;
+    width: 510rpx;
+    justify-content: space-between;
+    line-height: 100rpx;
+    padding: 0 30rpx 0 0;
+    font-size:28rpx;
+    box-sizing: border-box;
+}
+.calculate-box .all-selected{
+    padding-left: 90rpx;
+    color:#000000;
+    background: url(https://cdn.it120.cc/images/weappshop/gou.png) no-repeat 30rpx center;
+    background-size: 40rpx auto; 
+}
+.calculate-box .all-selected.active{
+    background: url(https://cdn.it120.cc/images/weappshop/gou-red.png) no-repeat 30rpx center;
+    background-size: 40rpx auto; 
+}
+.calculate-box .total{
+    color: #e64340;
+}

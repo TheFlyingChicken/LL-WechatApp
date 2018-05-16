@@ -1,66 +1,88 @@
-// pages/car/car.js
+// pages/search/search.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    list: [
+      {
+        'name': 'Car',
+        'image': '../../res/images/category-icon/6.png',
+        'description': 'this is a car',
+        'price': 100,
+        'number': 1
+      },
+      {
+        'name': 'Plane',
+        'image': '../../res/images/category-icon/3.png',
+        'description': 'this is a plane',
+        'price': 200,
+        'number': 1
+      },
+      {
+        'name': 'Tank',
+        'image': '../../res/images/category-icon/2.png',
+        'description': 'this is a tank',
+        'price': 300,
+        'number': 1
+      }
+    ],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })
