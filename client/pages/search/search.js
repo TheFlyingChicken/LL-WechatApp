@@ -1,19 +1,18 @@
-// pages/category/category.js
+// pages/search/search.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    category_id: 0,
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.category_id = options.category_id
-    console.log(options.category_id)
+  
   },
 
   /**

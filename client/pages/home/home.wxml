@@ -1,0 +1,37 @@
+<!--pages/category/category.wxml-->
+<view class="page">
+    <scroll-view scroll-y="true" style="height: 100%; width: 100%; display: flex; flex-direction: column; margin-top:20rpx">
+        
+        <!--分类列表  -->
+        <text class='nav_title'>所有的分类</text>
+        <view class="category">
+          <block wx:for="{{categories}}" wx:key="id">
+            <navigator url="../category/category?category_id={{item.id}}" hover-class="navigator-hover">
+              <view class="category-item">
+                <image style="width:100rpx; height: 100rpx;" src="{{item.image}}" mode="aspectFit"></image>
+                <text class="category-name">{{item.name}}</text>
+              </view>
+            </navigator>
+          </block>
+        </view> 
+        <view class='lightLine'></view>
+        <!--最近上新  -->
+        <text class='nav_title'>最近刚上新</text>
+        <view class="brand">
+          <block wx:for="{{brands}}" wx:key="id">
+            <view class="brand-item"> 
+              <image style="width:200rpx;height:240rpx;"  
+              src="../../res/images/category-icon/perfume.png" mode="aspectFill"></image>
+              <text>{{item.name}}</text>
+            </view>
+          </block>
+        </view>
+
+    </scroll-view>
+</view>
+<!--Search View  -->
+<view class='search'>
+  <navigator url="../search/search" hover-class="navigator-hover">
+    <image src='../../res/images/icons/search.png'></image>
+  </navigator>
+</view>

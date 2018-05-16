@@ -1,26 +1,31 @@
 // pages/category/category.js
+var qcloud = require('../../vendor/wafer2-client-sdk/index')
+var config = require('../../config')
+var util = require('../../utils/util.js')
+var category = require('../../utils/category.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    category_id: 0,
+    categories: category.list(),
+    brands: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.category_id = options.category_id
-    console.log(options.category_id)
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    this.getLastedBrands()
   },
 
   /**
@@ -63,5 +68,20 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+
+  getLastedBrands: function() {
+    var self = this
+    wx.request({
+      url: config.service.lastedBrandUrl,
+      success: function(res){
+        self.setData({
+          brands: res.data.data
+        })
+      },
+      fail: function(e){
+        console.error(e)
+      }
+    })
+  },
 })

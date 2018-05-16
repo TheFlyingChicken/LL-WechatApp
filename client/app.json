@@ -1,9 +1,11 @@
 {
   "pages": [
-    "pages/category/category",
+    "pages/home/home",
     "pages/car/car",
     "pages/index/index",
-    "pages/addCgi/addCgi"
+    "pages/addCgi/addCgi",
+    "pages/search/search",
+    "pages/category/category"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -18,7 +20,7 @@
     "selectedColor": "#4db30f",
     "list": [
       {
-        "pagePath": "pages/category/category",
+        "pagePath": "pages/home/home",
         "text": "首页",
         "iconPath": "res/images/icons/category.png",
         "selectedIconPath": "res/images/icons/category-selected.png"
