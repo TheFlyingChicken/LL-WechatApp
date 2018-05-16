@@ -1,6 +1,54 @@
 
 module.exports = {
   list: list,
+  carGoods: carGoods
+}
+
+function carGoods() {
+  return [
+    {
+      'name': 'Car',
+      'image': '../../res/images/category-icon/6.png',
+      'description': 'this is a car',
+      'price': 100,
+      'number': 1
+    },
+    {
+      'name': 'Plane',
+      'image': '../../res/images/category-icon/3.png',
+      'description': 'this is a plane',
+      'price': 200,
+      'number': 1
+    },
+    {
+      'name': 'Tank',
+      'image': '../../res/images/category-icon/2.png',
+      'description': 'this is a tank',
+      'price': 300,
+      'number': 1
+    },
+    {
+      'name': 'Bike',
+      'image': '../../res/images/category-icon/1.png',
+      'description': 'this is a bike',
+      'price': 300,
+      'number': 1
+    },
+    {
+      'name': 'UFO',
+      'image': '../../res/images/category-icon/4.png',
+      'description': 'this is a UFO',
+      'price': 300,
+      'number': 1
+    },
+    {
+      'name': 'MOTO',
+      'image': '../../res/images/category-icon/5.png',
+      'description': 'this is a moto',
+      'price': 300,
+      'number': 1
+    }
+  ]
 }
 
 function list() {

@@ -1,33 +1,13 @@
-// pages/search/search.js
+
+var category = require('../../utils/category.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [
-      {
-        'name': 'Car',
-        'image': '../../res/images/category-icon/6.png',
-        'description': 'this is a car',
-        'price': 100,
-        'number': 1
-      },
-      {
-        'name': 'Plane',
-        'image': '../../res/images/category-icon/3.png',
-        'description': 'this is a plane',
-        'price': 200,
-        'number': 1
-      },
-      {
-        'name': 'Tank',
-        'image': '../../res/images/category-icon/2.png',
-        'description': 'this is a tank',
-        'price': 300,
-        'number': 1
-      }
-    ],
+    list: [],
   },
 
   /**
@@ -41,7 +21,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.getItems()
   },
 
   /**
@@ -84,5 +64,47 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getItems: function () {
+    var carList = category.carGoods()
+    carList.forEach(function(item) {
+      item.selected = true
+    })
+    this.setData({
+      list: carList
+    })
+  },
+
+  /**
+   * 选中一个Item
+   */
+  selectItem: function () {
+
+  },
+  /**
+   * 减少数量
+   */
+  minusCount: function (e) {
+    var index = parseInt(e.currentTarget.dataset.index)
+    var list = this.data.list;
+    if (list[index].number > 1){
+      list[index].number -= 1
+      this.setData({
+        list: list
+      })
+    }
+  },
+  /**
+   * 增加数量
+   */
+  addCount: function (e) {
+    var index = parseInt(e.currentTarget.dataset.index)
+    var list = this.data.list;
+    list[index].number += 1
+    this.setData({
+      list: list
+    })
   }
+
 })
