@@ -198,5 +198,7 @@
 }
 
 .calculate-box .total{
+    position: absolute;
+    left: 230rpx;
     color: #e64340;
 }

@@ -112,7 +112,12 @@ Page({
     var index = parseInt(e.currentTarget.dataset.index)
     var list = this.data.list;
     list[index].selected = !list[index].selected
-    this.setCarInfo(list, this.calculate(), this.data.selectAll)
+
+    var allSelected = list.every(function (item) {
+      return item.selected
+    })
+
+    this.setCarInfo(list, this.calculate(), allSelected)
   },
   /**
    * 计算金额
