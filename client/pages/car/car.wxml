@@ -7,7 +7,10 @@
                     <image src="{{item.image}}" class="img" mode="aspectFit"/>
                 </view>
                 <view class="text-box">
-                    <view class="good-title">{{item.name}}</view>
+                    <view class="good-title">
+                      {{item.name}}
+                      <image class='delete-icon'  catchtap="deleteItem" data-index="{{index}}" src='../../res/images/icons/delete-icon.png'></image>
+                    </view>
                     <view class="good-label">{{item.description}}</view>
                     <view class="good-price">{{item.price}}</view>
                     <view class="buy-num">

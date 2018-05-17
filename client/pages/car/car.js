@@ -105,6 +105,17 @@ Page({
     this.setData({
       list: list
     })
+  },
+  /**
+   * 删除商品
+   */
+  deleteItem: function (e) {
+    var index = parseInt(e.currentTarget.dataset.index)
+    var list = this.data.list;
+    list.splice(index, 1);
+    this.setData({
+      list: list
+    })
   }
 
 })
