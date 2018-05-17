@@ -19,10 +19,14 @@
     width: 870rpx;
     box-sizing: border-box;
     transition: margin-left 0.2s ease-in-out;
+}
+
+.good-deselected{
     background: url(https://cdn.it120.cc/images/weappshop/gou.png) no-repeat 30rpx center;
     background-size: 40rpx auto; 
 }
-.good-card-body .active{
+
+.good-selected{
     background: url(https://cdn.it120.cc/images/weappshop/gou-red.png) no-repeat 30rpx center;
     background-size: 40rpx auto; 
 }

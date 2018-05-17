@@ -1,7 +1,7 @@
 <!--pages/car/car.wxml-->
 <view class="car-body">
     <view class="good-card" wx:for="{{list}}"  wx:key="{{index}}" >
-        <view class="good-card-body {{item.selected? 'active':''}}" bindtap="selectItem">
+        <view class="good-card-body {{item.selected? 'good-selected':'good-deselected'}}" bindtap="selectItem" data-index="{{index}}">
             <view class="good-card-info">
                 <view class="img-box">
                     <image src="{{item.image}}" class="img" mode="aspectFit"/>
@@ -26,8 +26,8 @@
 <view class="calculate-box">
     <view class="left-price">
         <view class="all-selected  {{allSelect?'active':''}}" bindtap="bindAllSelect">全选</view>
-        <view class="total" hidden="{{noSelect}}">合计：¥ {{totalPrice}} + {{totalScoreToPay}} 积分</view>
+        <view class="total">¥ {{totalCounts}}</view>
     </view>
-    <view class="to-pay-btn {{noSelect?'no-select':''}}" hidden="{{!saveHidden}}" bindtap="toPayOrder">去结算</view>
-    <view class="to-pay-btn {{noSelect?'no-select':''}}" hidden="{{saveHidden}}" bindtap="deleteSelected">删除</view>
+    <view class="to-pay-btn {{noSelect?'no-select':''}}" bindtap="toPayOrder">去结算</view>
+    <!-- <view class="to-pay-btn {{noSelect?'no-select':''}}" hidden="{{saveHidden}}" bindtap="deleteSelected">删除</view> -->
 </view>

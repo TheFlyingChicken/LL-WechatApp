@@ -8,6 +8,9 @@ Page({
    */
   data: {
     list: [],
+    selectedList: [],
+    totalCounts: 0,
+    selectedAll: false
   },
 
   /**
@@ -69,18 +72,16 @@ Page({
   getItems: function () {
     var carList = category.carGoods()
     carList.forEach(function(item) {
-      item.selected = true
+      item.selected = false
     })
-    this.setData({
-      list: carList
-    })
+    this.setCarInfo(carList, this.calculate(), this.data.selectedAll)
   },
-
-  /**
-   * 选中一个Item
-   */
-  selectItem: function () {
-
+  setCarInfo: function (list, total, allSelected) {
+    this.setData({
+      list: list,
+      totalCounts: total,
+      selectedAll: allSelected
+    })
   },
   /**
    * 减少数量
@@ -90,9 +91,8 @@ Page({
     var list = this.data.list;
     if (list[index].number > 1){
       list[index].number -= 1
-      this.setData({
-        list: list
-      })
+      list[index].selected = true
+      this.setCarInfo(list, this.calculate(), this.data.selectedAll)
     }
   },
   /**
@@ -102,9 +102,8 @@ Page({
     var index = parseInt(e.currentTarget.dataset.index)
     var list = this.data.list;
     list[index].number += 1
-    this.setData({
-      list: list
-    })
+    list[index].selected = true
+    this.setCarInfo(list, this.calculate(), this.data.selectedAll)
   },
   /**
    * 删除商品
@@ -113,9 +112,30 @@ Page({
     var index = parseInt(e.currentTarget.dataset.index)
     var list = this.data.list;
     list.splice(index, 1);
-    this.setData({
-      list: list
-    })
+    this.setCarInfo(list, this.calculate(), this.data.selectedAll)
+  },
+  /**
+   * 选中商品
+   */
+  selectItem: function (e) {
+    var index = parseInt(e.currentTarget.dataset.index)
+    var list = this.data.list;
+    list[index].selected = !list[index].selected
+    this.setCarInfo(list, this.calculate(), this.data.selectedAll)
+  },
+  /**
+   * 计算金额
+   */
+  calculate: function () {
+    var list = this.data.list
+    var total = 0
+    for (var i = 0; i < list.length; i++) {
+      var curItem = list[i]
+      if (curItem.selected) {
+        total += parseFloat(curItem.price) * curItem.number
+      }
+    }
+    return total
   }
 
 })
