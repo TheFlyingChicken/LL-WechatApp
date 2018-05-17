@@ -10,7 +10,7 @@ Page({
     list: [],
     selectedList: [],
     totalCounts: 0,
-    selectedAll: false
+    selectAll: false
   },
 
   /**
@@ -74,13 +74,13 @@ Page({
     carList.forEach(function(item) {
       item.selected = false
     })
-    this.setCarInfo(carList, this.calculate(), this.data.selectedAll)
+    this.setCarInfo(carList, this.calculate(), this.data.selectAll)
   },
   setCarInfo: function (list, total, allSelected) {
     this.setData({
       list: list,
       totalCounts: total,
-      selectedAll: allSelected
+      selectAll: allSelected
     })
   },
   /**
@@ -92,7 +92,7 @@ Page({
     if (list[index].number > 1){
       list[index].number -= 1
       list[index].selected = true
-      this.setCarInfo(list, this.calculate(), this.data.selectedAll)
+      this.setCarInfo(list, this.calculate(), this.data.selectAll)
     }
   },
   /**
@@ -103,16 +103,7 @@ Page({
     var list = this.data.list;
     list[index].number += 1
     list[index].selected = true
-    this.setCarInfo(list, this.calculate(), this.data.selectedAll)
-  },
-  /**
-   * 删除商品
-   */
-  deleteItem: function (e) {
-    var index = parseInt(e.currentTarget.dataset.index)
-    var list = this.data.list;
-    list.splice(index, 1);
-    this.setCarInfo(list, this.calculate(), this.data.selectedAll)
+    this.setCarInfo(list, this.calculate(), this.data.selectAll)
   },
   /**
    * 选中商品
@@ -121,7 +112,7 @@ Page({
     var index = parseInt(e.currentTarget.dataset.index)
     var list = this.data.list;
     list[index].selected = !list[index].selected
-    this.setCarInfo(list, this.calculate(), this.data.selectedAll)
+    this.setCarInfo(list, this.calculate(), this.data.selectAll)
   },
   /**
    * 计算金额
@@ -136,6 +127,37 @@ Page({
       }
     }
     return total
-  }
+  },
+  /**
+   * 全选
+   */
+  selectAllItems: function () {
+    var list = this.data.list
+    var selected = !this.data.selectAll
+    list.forEach(function(item){
+      item.selected = selected
+    })
+    this.setCarInfo(list, this.calculate(), selected)
+  },
+  /**
+   * 删除商品
+   */
+  deleteSelectedItems: function () {
+    var list = this.data.list
+    var leftedList = list.filter(function (item) {
+      return !item.selected
+    })
+    this.setData({
+      list: leftedList
+    })
+    this.setData({
+      totalCounts: this.calculate()
+    })
+  },
+  /**
+   * 
+   */
+  generateOrder: function () {
 
+  }
 })

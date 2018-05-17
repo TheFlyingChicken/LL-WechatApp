@@ -1,4 +1,10 @@
 <!--pages/car/car.wxml-->
+<view class="car-head">
+    <view class="left-price">
+        <view class="{{selectAll ? 'all-selected-active' : 'all-selected-inactive'}}" bindtap="selectAllItems">全选</view>
+    </view>
+    <image class='delete-icon' bindtap='deleteSelectedItems' src='../../res/images/icons/delete-icon.png'></image>
+</view>
 <view class="car-body">
     <view class="good-card" wx:for="{{list}}"  wx:key="{{index}}" >
         <view class="good-card-body {{item.selected? 'good-selected':'good-deselected'}}" bindtap="selectItem" data-index="{{index}}">
@@ -7,10 +13,7 @@
                     <image src="{{item.image}}" class="img" mode="aspectFit"/>
                 </view>
                 <view class="text-box">
-                    <view class="good-title">
-                      {{item.name}}
-                      <image class='delete-icon'  catchtap="deleteItem" data-index="{{index}}" src='../../res/images/icons/delete-icon.png'></image>
-                    </view>
+                    <view class="good-title">{{item.name}}</view>
                     <view class="good-label">{{item.description}}</view>
                     <view class="good-price">{{item.price}}</view>
                     <view class="buy-num">
@@ -25,9 +28,7 @@
 </view>
 <view class="calculate-box">
     <view class="left-price">
-        <view class="all-selected  {{allSelect?'active':''}}" bindtap="bindAllSelect">全选</view>
         <view class="total">¥ {{totalCounts}}</view>
     </view>
-    <view class="to-pay-btn {{noSelect?'no-select':''}}" bindtap="toPayOrder">去结算</view>
-    <!-- <view class="to-pay-btn {{noSelect?'no-select':''}}" hidden="{{saveHidden}}" bindtap="deleteSelected">删除</view> -->
+    <view class="to-pay-btn" bindtap="generateOrder">去结算</view>
 </view>

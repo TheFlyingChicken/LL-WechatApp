@@ -2,10 +2,45 @@
 .container{
     justify-content:initial;
 }
+.car-head{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 80rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 30rpx;
+    border-bottom:1px solid #eee; 
+    border-top:1px solid #eee; 
+    background-color: #fff;
+}
+
+.all-selected-inactive{
+    padding-left: 90rpx;
+    color:#000000;
+    background: url(https://cdn.it120.cc/images/weappshop/gou.png) no-repeat 30rpx center;
+    background-size: 40rpx auto; 
+}
+.all-selected-active{
+    padding-left: 90rpx;
+    color:#000000;
+    background: url(https://cdn.it120.cc/images/weappshop/gou-red.png) no-repeat 30rpx center;
+    background-size: 40rpx auto; 
+}
+
+.delete-icon{
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 36rpx;
+}
 
 .car-body{
     width: 100%;
     background-color: #fff;
+    padding-top: 100rpx;
     padding-bottom: 100rpx;
 }
 .good-card{
@@ -131,12 +166,6 @@
     height:160rpx;
 }
 
-.delete-icon{
-    width: 30rpx;
-    height: 30rpx;
-    position: absolute;
-    right: 20rpx;
-}
 .calculate-box{
     display: flex;
     justify-content: space-between;
@@ -157,9 +186,6 @@
     font-size:32rpx;
     color:#ffffff;
 }
-.calculate-box .to-pay-btn.no-select{
-    background-color: #ccc;
-}
 
 .calculate-box  .left-price{
     display: flex;
@@ -170,16 +196,7 @@
     font-size:28rpx;
     box-sizing: border-box;
 }
-.calculate-box .all-selected{
-    padding-left: 90rpx;
-    color:#000000;
-    background: url(https://cdn.it120.cc/images/weappshop/gou.png) no-repeat 30rpx center;
-    background-size: 40rpx auto; 
-}
-.calculate-box .all-selected.active{
-    background: url(https://cdn.it120.cc/images/weappshop/gou-red.png) no-repeat 30rpx center;
-    background-size: 40rpx auto; 
-}
+
 .calculate-box .total{
     color: #e64340;
 }
