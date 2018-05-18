@@ -17,9 +17,9 @@
         <view class='lightLine'></view>
         <!--最近上新  -->
         <view class='brand-view-title'>最近刚上新</view>
-        <view class="brand-view-body">
-          <block wx:for="{{brands}}" wx:key="id">
-            <card></card>
+        <view class="card-container">
+          <block wx:for="{{brands}}" wx:key="item.id">
+            <card brand="{{item}}"></card>
           </block>
         </view>
 

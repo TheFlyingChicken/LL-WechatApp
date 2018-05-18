@@ -1,11 +1,12 @@
 <!--component/card/card.wxml-->
 <view>
     <view class="img-box">
-      <image class="image" src="../../res/images/test.png" mode="aspectFill" lazy-load="true"/>
+      <image wx:if="{{brand.image}}" class="image" src="{{brand.image}}" mode="aspectFit" lazy-load="true"/>
+      <image wx:else class="image" src="../../res/images/placeholder.png" mode="aspectFit" lazy-load="true"/>
     </view>
-    <view class="goods-title">item.name</view>
+    <view class="goods-title"> {{ brand.name }} </view>
     <view style='display:flex;'>
-      <view class="goods-price">¥ item.minPrice</view>
+      <view class="goods-price">¥ {{ brand.price }}</view>
     </view>           
 </view>
     

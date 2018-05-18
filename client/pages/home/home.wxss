@@ -40,16 +40,6 @@
   background-color: rgb(245, 245, 245);
 }
 
-.brand-view-body{
-	/* flex-direction: row; */
-  display: flex;
-  justify-content: space-between;  
-  flex-wrap:wrap;
-  box-sizing: content-box;
-  padding: 24rpx;
-  background-color: rgb(245, 245, 245);
-}
-
 /*分界线  */
 .lightLine{
   width: 100%;

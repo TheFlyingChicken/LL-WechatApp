@@ -1,2 +1,12 @@
 <!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<view class="page">
+    <scroll-view scroll-y="true" style="height: 100%; width: 100%; display: flex; flex-direction: column; margin-top:20rpx">
+  
+        <view class="card-container">
+          <block wx:for="{{brands}}" wx:key="item.id">
+            <card brand="{{item}}"></card>
+          </block>
+        </view>
+
+    </scroll-view>
+</view>

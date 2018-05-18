@@ -1,3 +1,5 @@
+var category = require('../../utils/category.js')
+
 // pages/category/category.js
 Page({
 
@@ -6,6 +8,7 @@ Page({
    */
   data: {
     category_id: 0,
+    brands: category.carGoods(),
   },
 
   /**
@@ -27,7 +30,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    console.log(this.data.brands)
   },
 
   /**
