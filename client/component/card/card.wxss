@@ -1,0 +1,36 @@
+/* component/card/card.wxss */
+:host {
+  width: 339rpx;
+  height: 472rpx;
+  background-color: #fff;
+  overflow: hidden;
+  margin-bottom: 24rpx;
+}
+
+.img-box{
+  width: 339rpx;
+  height: 339rpx;
+  overflow: hidden;
+}
+.img-box image{
+   width: 339rpx;
+   height: 339rpx;
+}
+.goods-title{
+  width: 280rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 24rpx;
+  padding: 24rpx 0 0rpx 0;
+  color:#000;
+  margin-left: 24rpx;
+}
+.goods-price{
+  width: 280rpx;
+  overflow: hidden;
+  font-size: 24rpx;
+  padding: 24rpx 0;
+  color:#e64340;
+  margin-left: 24rpx;
+}

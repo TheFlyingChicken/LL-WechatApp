@@ -3,8 +3,8 @@
     <scroll-view scroll-y="true" style="height: 100%; width: 100%; display: flex; flex-direction: column; margin-top:20rpx">
         
         <!--分类列表  -->
-        <text class='nav_title'>所有的分类</text>
-        <view class="category">
+        <view class='nav_title'>所有的分类</view>
+        <view class="category-view">
           <block wx:for="{{categories}}" wx:key="id">
             <navigator url="../category/category?category_id={{item.id}}" hover-class="navigator-hover">
               <view class="category-item">
@@ -16,14 +16,10 @@
         </view> 
         <view class='lightLine'></view>
         <!--最近上新  -->
-        <text class='nav_title'>最近刚上新</text>
-        <view class="brand">
+        <view class='brand-view-title'>最近刚上新</view>
+        <view class="brand-view-body">
           <block wx:for="{{brands}}" wx:key="id">
-            <view class="brand-item"> 
-              <image style="width:200rpx;height:240rpx;"  
-              src="../../res/images/category-icon/perfume.png" mode="aspectFill"></image>
-              <text>{{item.name}}</text>
-            </view>
+            <card></card>
           </block>
         </view>
 

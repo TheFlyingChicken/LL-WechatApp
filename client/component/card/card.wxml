@@ -1,0 +1,11 @@
+<!--component/card/card.wxml-->
+<view>
+    <view class="img-box">
+      <image class="image" src="../../res/images/test.png" mode="aspectFill" lazy-load="true"/>
+    </view>
+    <view class="goods-title">item.name</view>
+    <view style='display:flex;'>
+      <view class="goods-price">¥ item.minPrice</view>
+    </view>           
+</view>
+    
