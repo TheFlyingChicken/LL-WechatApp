@@ -6,7 +6,8 @@
     "pages/addCgi/addCgi",
     "pages/search/search",
     "pages/category/category",
-    "component/card/card"
+    "component/card/card",
+    "pages/brand/brandDetail"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

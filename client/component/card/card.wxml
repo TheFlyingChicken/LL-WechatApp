@@ -1,5 +1,6 @@
 <!--component/card/card.wxml-->
 <view>
+  <navigator url="../../pages/brand/brandDetail?brand_id={{brand.id}}" hover-class="navigator-hover">
     <view class="img-box">
       <image wx:if="{{brand.image}}" class="image" src="{{brand.image}}" mode="aspectFit" lazy-load="true"/>
       <image wx:else class="image" src="../../res/images/placeholder.png" mode="aspectFit" lazy-load="true"/>
@@ -7,6 +8,7 @@
     <view class="goods-title"> {{ brand.name }} </view>
     <view style='display:flex;'>
       <view class="goods-price">¥ {{ brand.price }}</view>
-    </view>           
+    </view> 
+  </navigator>          
 </view>
     
