@@ -13,9 +13,15 @@ class Category extends CI_Controller {
     }
 
     public function brands($category_id) {
-      $cond = 'category_id = '.$category_id;
-      $data = DB::select('brand', ['*'], $cond);
+      //$cond = 'category_id = '.$category_id;
+      $str = 'SELECT b.*, i.image FROM brand b JOIN image i ON b.id = i.brand_id WHERE b.category_id = ';
 
+      //$data = DB::select('brand', ['*'], $cond);
+      $data = DB::get($str.$category_id);
+
+      // $query = DB::raw($str.$category_id);
+      // $data = $query->fetchAll();
+      
       $this->json([
         'code' => 1,
         'data' => $data
