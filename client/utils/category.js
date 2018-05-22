@@ -15,14 +15,14 @@ function carGoods() {
     },
     {
       'name': 'Plane',
-      'image': '../../res/images/category-icon/3.png',
+      'image': 'http://lldianjia-1255423626.cosbj.myqcloud.com/images/luckseason.jpg',
       'description': 'this is a plane',
       'price': 200,
       'number': 1
     },
     {
       'name': 'Tank',
-      'image': '../../res/images/category-icon/2.png',
+      'image': 'http://lldianjia-1255423626.cosbj.myqcloud.com/images/luckseason.jpg',
       'description': 'this is a tank',
       'price': 300,
       'number': 1

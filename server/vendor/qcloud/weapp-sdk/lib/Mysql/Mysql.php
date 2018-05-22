@@ -238,4 +238,16 @@ class Mysql
 
         return $prepareData;
     }
+
+
+    /**
+     * 直接用SQL语句查询
+     * @param string $sql 查询语句
+     */
+    public static function get($sql) {
+      $query = self::raw($sql);
+      $query->execute();
+      $allResult = $query->fetchAll(PDO::FETCH_OBJ);
+      return $allResult === NULL ? [1111] : $allResult;
+    }
 }

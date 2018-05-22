@@ -2,7 +2,7 @@
 <view>
   <navigator url="../../pages/brand/brandDetail?brand_id={{brand.id}}" hover-class="navigator-hover">
     <view class="img-box">
-      <image wx:if="{{brand.image}}" class="image" src="{{brand.image}}" mode="aspectFit" lazy-load="true"/>
+      <image wx:if="{{brand.image_url}}" class="image" src="{{brand.image_url}}" mode="aspectFit" lazy-load="true"/>
       <image wx:else class="image" src="../../res/images/placeholder.png" mode="aspectFit" lazy-load="true"/>
     </view>
     <view class="goods-title"> {{ brand.name }} </view>

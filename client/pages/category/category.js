@@ -1,4 +1,5 @@
 var category = require('../../utils/category.js')
+var config = require('../../config')
 
 // pages/category/category.js
 Page({
@@ -8,15 +9,16 @@ Page({
    */
   data: {
     category_id: 0,
-    brands: category.carGoods(),
+    brands: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.category_id = options.category_id
-    console.log(options.category_id)
+    this.data.category_id = options.category_id
+    console.log(this.data.category_id)
+    this.getBrands()
   },
 
   /**
@@ -30,7 +32,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log(this.data.brands)
+    
   },
 
   /**
@@ -66,5 +68,22 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+
+  getBrands: function () {
+    var self = this
+    var url = config.service.brandUrl + '/' + self.data.category_id
+    wx.request({
+      url: url,
+      success: function (res) {
+        self.setData({
+          brands: res.data.data
+        })
+        console.log(res.data)
+      },
+      fail: function (e) {
+        console.error(e)
+      }
+    })
+  },
 })
