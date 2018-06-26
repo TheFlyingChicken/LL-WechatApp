@@ -24,8 +24,9 @@ var config = {
         uploadUrl: `${host}/weapp/upload`,
 
         // 获取所有Category
-        categoryUrl: `${host}/weapp/category/categories`,
+        categoryUrl: `${host}/weapp/category/all`,
         brandUrl: `${host}/weapp/brand/all`,
+        selectedBrandUrl: `${host}/weapp/brand/index`, 
         lastedBrandUrl: `${host}/weapp/brand/lasted`,
         testUrl: `${host}/weapp/category/test`,
     }

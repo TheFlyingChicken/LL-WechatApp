@@ -1,4 +1,6 @@
 // pages/brand/brandDetail.js
+var config = require('../../config')
+
 Page({
 
   /**
@@ -6,6 +8,7 @@ Page({
    */
   data: {
     brand_id: 0,
+    brands:[],
   },
 
   /**
@@ -13,7 +16,8 @@ Page({
    */
   onLoad: function (options) {
     this.brand_id = options.brand_id
-    console.log(options.brand_id)
+ 
+    this.getSelectedBrand(options.brand_id)
   },
 
   /**
@@ -63,5 +67,25 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  /**
+   * 获取选中的商品
+   */
+  getSelectedBrand: function(brand_id) {
+    var self = this
+    var url = config.service.selectedBrandUrl + '/' + brand_id
+    
+    wx.request({
+      url: url,
+      success: function (res) {
+        self.setData({
+          brands: res.data.data,
+        })
+        console.log(res.data.data[0])
+      },
+      fail: function (e) {
+        console.error(e)
+      }
+    })
   }
 })

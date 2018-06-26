@@ -1,2 +1,17 @@
-<!--pages/brand/brandDetail.wxml-->
-<text>pages/brand/brandDetail.wxml</text>
+<view class="container">
+  <view class="page-body">
+    <view class="page-section swiper">
+      <swiper indicator-dots="true" circular="true">
+        <block wx:for="{{brands}}" wx:key="index">
+          <swiper-item>
+            <!-- <view class="swiper-item {{item}}"></view> -->
+             <image src="{{item.image_url}}" class="slide-image" width="355" height="150" mode="aspectFit" lazy-load="true"/> 
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="page-section" style="margin-top: 40rpx;margin-bottom: 0;">
+      
+    </view> 
+  </view>   
+</view>

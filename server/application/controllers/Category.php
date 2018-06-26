@@ -3,7 +3,10 @@
 use QCloud_WeApp_SDK\Mysql\Mysql as DB;
 
 class Category extends CI_Controller {
-    public function categories() {
+    /**
+     * 获取
+     */
+    public function all() {
         $data = DB::select('category', ['*']);
        
         $this->json([
