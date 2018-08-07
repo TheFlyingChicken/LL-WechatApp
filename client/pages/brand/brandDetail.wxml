@@ -1,17 +1,28 @@
-<view class="container">
-  <view class="page-body">
-    <view class="page-section swiper">
-      <swiper indicator-dots="true" circular="true" style="height:220px;">
-        <block wx:for="{{brands}}" wx:key="index">
-          <swiper-item>
-            <!-- <view class="swiper-item {{item}}"></view> -->
-             <image src="{{item.image_url}}" class="slide-image" mode="aspectFit" lazy-load="true"/> 
-          </swiper-item>
-        </block>
-      </swiper>
-    </view>
-    <view class="page-section" style="margin-top: 40rpx;margin-bottom: 0;">
-      
-    </view> 
-  </view>   
+
+<view class="page-body">
+  <view class="page-section swiper">
+    <swiper indicator-dots="true" circular="true" style="height:220px;">
+      <block wx:for="{{brands}}" wx:key="index">
+        <swiper-item>
+          <!-- <view class="swiper-item {{item}}"></view> -->
+            <image src="{{item.image_url}}" class="slide-image" mode="aspectFit" lazy-load="true"/> 
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="page-section" style="margin-top: 40rpx;margin-bottom: 0;">
+    
+  </view> 
+</view>
+
+<view class='cart in-cart'>
+  <navigator url="../car/car" hover-class="navigator-hover">
+    <image src='../../res/images/icons/cart.png'></image>
+  </navigator>
+</view>
+
+<view class='cart add-cart'>
+  <navigator url="../car/car" hover-class="navigator-hover">
+    <image src='../../res/images/icons/add-cart.png'></image>
+  </navigator>
 </view>
