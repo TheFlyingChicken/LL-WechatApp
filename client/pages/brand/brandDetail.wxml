@@ -1,11 +1,11 @@
 <view class="container">
   <view class="page-body">
     <view class="page-section swiper">
-      <swiper indicator-dots="true" circular="true">
+      <swiper indicator-dots="true" circular="true" style="height:220px;">
         <block wx:for="{{brands}}" wx:key="index">
           <swiper-item>
             <!-- <view class="swiper-item {{item}}"></view> -->
-             <image src="{{item.image_url}}" class="slide-image" width="355" height="150" mode="aspectFit" lazy-load="true"/> 
+             <image src="{{item.image_url}}" class="slide-image" mode="aspectFit" lazy-load="true"/> 
           </swiper-item>
         </block>
       </swiper>
